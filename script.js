@@ -36,3 +36,14 @@ window.addEventListener("keydown", (event) => {
     closeMenu();
   }
 });
+
+const heroVideo = document.querySelector(".hero-video");
+
+heroVideo?.addEventListener("error", () => {
+  if (!heroVideo.dataset.fallbackApplied) {
+    heroVideo.dataset.fallbackApplied = "true";
+    heroVideo.innerHTML = '<source src="assets/video.mp4" type="video/mp4" />';
+    heroVideo.load();
+    heroVideo.play().catch(() => {});
+  }
+});
