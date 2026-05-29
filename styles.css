@@ -53,7 +53,7 @@ a {
   padding: 10px 12px 10px 16px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 18px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 999px;
@@ -106,6 +106,7 @@ a {
 }
 
 .luxury-nav {
+  margin-left: auto;
   display: flex;
   gap: 18px;
   color: rgba(248, 248, 244, 0.72);
@@ -260,7 +261,7 @@ a {
   display: grid;
   align-items: center;
   overflow: hidden;
-  padding: 136px 0 58px;
+  padding: 102px 0 58px;
   background:
     linear-gradient(90deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.48)),
     url("assets/media/work-suv.jpg") center / cover;
@@ -289,7 +290,6 @@ a {
 }
 
 .hero-content,
-.hero-proof,
 .section,
 .cta-band,
 .final-cta {
@@ -444,39 +444,6 @@ h1 {
   line-height: 1.45;
 }
 
-.hero-proof {
-  margin-top: 44px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  color: rgba(248, 248, 244, 0.68);
-}
-
-.hero-proof article {
-  padding: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.04);
-  text-align: center;
-}
-
-.hero-proof strong {
-  display: block;
-  color: var(--white);
-  font-family: var(--display);
-  font-size: 20px;
-  line-height: 1;
-}
-
-.hero-proof span {
-  display: block;
-  margin-top: 8px;
-  font-size: 11px;
-  letter-spacing: 0.05em;
-  line-height: 1.4;
-  text-transform: uppercase;
-}
-
 .section {
   padding: 96px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -501,6 +468,7 @@ h1 {
 
 .services-section .section-heading,
 .work-section .section-heading,
+.quality-section .section-heading,
 .reviews-section .section-heading,
 .process-section .section-heading,
 .video-section .section-heading,
@@ -519,6 +487,20 @@ h1 {
   line-height: 1.05;
   letter-spacing: 0;
   text-wrap: balance;
+}
+
+.services-section .section-heading {
+  max-width: 920px;
+}
+
+.services-section .service-grid,
+.location-section .location-grid {
+  max-width: 920px;
+  margin-inline: auto;
+}
+
+.location-section .location-grid {
+  max-width: 1120px;
 }
 
 .split-section,
@@ -612,8 +594,30 @@ h1 {
   line-height: 1.78;
 }
 
+.location-copy h2 {
+  margin: 0 0 34px;
+  color: var(--white);
+  font-family: var(--display);
+  font-size: clamp(42px, 5vw, 70px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
 .authority-copy p {
   margin-bottom: 18px;
+}
+
+.authority-copy h2 {
+  margin: 0 0 34px;
+  color: var(--white);
+  font-family: var(--display);
+  font-size: clamp(42px, 5vw, 70px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: 0;
+  text-wrap: balance;
 }
 
 .text-link {
@@ -626,7 +630,8 @@ h1 {
 
 .service-grid,
 .merit-list,
-.process-list {
+.process-list,
+.quality-placeholders {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
@@ -637,7 +642,8 @@ h1 {
 }
 
 .service-card,
-.process-list article {
+.process-list article,
+.quality-placeholders article {
   min-height: 236px;
   padding: 26px;
 }
@@ -645,6 +651,7 @@ h1 {
 .service-card span,
 .merit-list span,
 .process-list span,
+.quality-placeholders span,
 .work-card figcaption span,
 .video-feature span,
 .video-note span {
@@ -661,10 +668,30 @@ h1 {
 
 .service-card p,
 .merit-list p,
-.process-list p {
+.process-list p,
+.quality-placeholders p {
   margin-bottom: 0;
   color: rgba(248, 248, 244, 0.65);
   line-height: 1.66;
+}
+
+.quality-placeholders {
+  max-width: 920px;
+  margin-inline: auto;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.quality-placeholders article {
+  min-height: 230px;
+  border: 1px dashed rgba(216, 181, 109, 0.35);
+  border-radius: 22px;
+  background:
+    linear-gradient(135deg, rgba(216, 181, 109, 0.08), rgba(255, 255, 255, 0.025)),
+    var(--panel);
+}
+
+.quality-placeholders p {
+  margin-top: 72px;
 }
 
 .merit-list {
@@ -875,7 +902,7 @@ h1 {
 .social-row {
   margin-top: 34px;
   display: grid;
-  grid-template-columns: repeat(4, 52px);
+  grid-template-columns: repeat(2, 52px);
   justify-content: center;
   gap: 12px;
 }
@@ -967,6 +994,7 @@ body.is-ready .reveal {
   .service-grid,
   .merit-list,
   .process-list,
+  .quality-placeholders,
   .video-grid,
   .objection-grid,
   .reviews-grid {
@@ -976,10 +1004,6 @@ body.is-ready .reveal {
   .cta-band {
     align-items: flex-start;
     flex-direction: column;
-  }
-
-  .hero-proof {
-    grid-template-columns: 1fr;
   }
 
   .hero-checks {
@@ -1009,11 +1033,10 @@ body.is-ready .reveal {
 
   .hero {
     min-height: auto;
-    padding: 132px 0 52px;
+    padding: 104px 0 52px;
   }
 
   .hero-content,
-  .hero-proof,
   .section,
   .cta-band,
   .final-cta {
