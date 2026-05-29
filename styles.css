@@ -605,6 +605,11 @@ h1 {
   text-wrap: balance;
 }
 
+.location-copy .primary-cta {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .authority-copy p {
   margin-bottom: 18px;
 }
@@ -696,6 +701,10 @@ h1 {
 
 .merit-list {
   grid-template-columns: repeat(2, 1fr);
+}
+
+.authority-section .merit-list {
+  margin-top: clamp(76px, 8vw, 118px);
 }
 
 .merit-list article {
@@ -1009,6 +1018,10 @@ body.is-ready .reveal {
   .hero-checks {
     max-width: 680px;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .authority-section .merit-list {
+    margin-top: 0;
   }
 
   .work-gallery {
