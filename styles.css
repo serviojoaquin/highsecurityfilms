@@ -67,42 +67,14 @@ a {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
   min-width: 0;
 }
 
-.brand-mark {
-  position: relative;
-  width: 46px;
-  height: 28px;
-  border: 2px solid var(--white);
-  overflow: hidden;
-  clip-path: polygon(0 100%, 15% 34%, 100% 0, 100% 100%);
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.brand-mark span {
-  position: absolute;
-  inset: 6px 7px 5px 11px;
-  background: var(--red);
-  clip-path: polygon(0 100%, 12% 30%, 100% 0, 100% 100%);
-}
-
-.brand-copy {
-  display: grid;
-  gap: 1px;
-  text-transform: uppercase;
-}
-
-.brand-copy strong {
-  font-size: 26px;
-  line-height: 0.85;
-}
-
-.brand-copy small {
-  color: var(--muted);
-  font-size: 10px;
-  letter-spacing: 0.18em;
+.brand-logo {
+  width: clamp(124px, 12vw, 186px);
+  height: auto;
+  display: block;
+  object-fit: contain;
 }
 
 .luxury-nav {
@@ -1039,7 +1011,6 @@ body.is-ready .reveal {
     width: min(100% - 24px, 1120px);
   }
 
-  .brand-copy small,
   .nav-cta {
     display: none;
   }
