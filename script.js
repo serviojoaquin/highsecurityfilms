@@ -1,16 +1,23 @@
+document.body.classList.add("is-loading");
+
 window.addEventListener("load", () => {
+  window.setTimeout(() => {
+    document.body.classList.remove("is-loading");
+    document.body.classList.add("is-ready");
+  }, 650);
+
   if (window.gsap) {
-    gsap.to(".reveal", {
-      autoAlpha: 1,
-      y: 0,
-      duration: 1.65,
-      ease: "power4.out",
-      stagger: 0.16,
-    });
+    window.setTimeout(() => {
+      gsap.to(".reveal", {
+        autoAlpha: 1,
+        y: 0,
+        duration: 1.65,
+        ease: "power4.out",
+        stagger: 0.16,
+      });
+    }, 520);
     return;
   }
-
-  document.body.classList.add("is-ready");
 });
 
 const header = document.querySelector(".site-header");
