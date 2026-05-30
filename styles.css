@@ -119,6 +119,7 @@ a {
 }
 
 .menu-toggle {
+  margin-left: auto;
   width: 46px;
   height: 46px;
   display: none;
@@ -434,7 +435,7 @@ h1 {
 }
 
 .section-heading {
-  max-width: 760px;
+  max-width: 920px;
   margin-bottom: 38px;
 }
 
@@ -450,7 +451,7 @@ h1 {
 }
 
 .quality-section .section-heading {
-  max-width: 980px;
+  max-width: 1060px;
 }
 
 .section h2,
@@ -466,7 +467,7 @@ h1 {
 }
 
 .services-section .section-heading {
-  max-width: 920px;
+  max-width: 1060px;
 }
 
 .services-section .service-grid,
@@ -837,7 +838,7 @@ h1 {
 }
 
 .objection-grid {
-  max-width: 860px;
+  max-width: 980px;
   margin: 0 auto 28px;
   text-align: left;
 }
@@ -883,7 +884,7 @@ h1 {
 }
 
 .final-cta h2 {
-  max-width: 780px;
+  max-width: 980px;
   margin: 0 auto 32px;
 }
 
