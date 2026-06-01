@@ -24,6 +24,13 @@ const header = document.querySelector(".site-header");
 const menuToggle = document.querySelector(".menu-toggle");
 const mobileMenu = document.querySelector(".mobile-menu");
 
+const updateHeaderState = () => {
+  header?.classList.toggle("is-scrolled", window.scrollY > 24);
+};
+
+updateHeaderState();
+window.addEventListener("scroll", updateHeaderState, { passive: true });
+
 const closeMenu = () => {
   header?.classList.remove("is-menu-open");
   menuToggle?.setAttribute("aria-expanded", "false");
@@ -54,3 +61,26 @@ heroVideo?.addEventListener("error", () => {
     heroVideo.play().catch(() => {});
   }
 });
+
+const animatedSections = document.querySelectorAll(".section, .cta-band, .final-cta");
+
+if ("IntersectionObserver" in window) {
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          sectionObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.14, rootMargin: "0px 0px -8% 0px" }
+  );
+
+  animatedSections.forEach((section) => {
+    section.classList.add("scroll-reveal");
+    sectionObserver.observe(section);
+  });
+} else {
+  animatedSections.forEach((section) => section.classList.add("is-visible"));
+}
