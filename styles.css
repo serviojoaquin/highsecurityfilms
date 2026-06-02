@@ -389,7 +389,7 @@ p {
 }
 
 h1 {
-  max-width: 780px;
+  max-width: 1040px;
   margin-bottom: 0;
   font-family: var(--display);
   font-size: clamp(38px, 5.4vw, 76px);
@@ -545,6 +545,33 @@ h1 {
 
 .quality-section .section-heading {
   max-width: 1060px;
+}
+
+.review-rating {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 18px;
+  color: rgba(248, 248, 244, 0.72);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.rating-stars {
+  display: inline-flex;
+  gap: 4px;
+  color: var(--gold);
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.half-star {
+  background: linear-gradient(90deg, var(--gold) 50%, rgba(248, 248, 244, 0.22) 50%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .section h2,
