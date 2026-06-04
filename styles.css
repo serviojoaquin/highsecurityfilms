@@ -923,6 +923,24 @@ h1 {
   line-height: 1.36;
 }
 
+.resistance-options strong,
+.resistance-options em {
+  display: block;
+}
+
+.resistance-options strong {
+  color: var(--white);
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.resistance-options em {
+  margin-top: 4px;
+  color: rgba(248, 248, 244, 0.68);
+  font-style: normal;
+}
+
 .resistance-grid {
   grid-template-columns: repeat(3, 1fr);
 }
