@@ -1,5 +1,23 @@
 document.body.classList.add("is-loading");
 
+const legacySectionIds = {
+  "#problema": "#para-quien",
+  "#autoridad": "#servicios",
+  "#nosotros": "#quienes-somos",
+};
+
+const migrateLegacyHash = () => {
+  const currentHash = window.location.hash;
+  const updatedHash = legacySectionIds[currentHash];
+
+  if (!updatedHash) {
+    return;
+  }
+
+  window.history.replaceState(null, "", updatedHash);
+  document.querySelector(updatedHash)?.scrollIntoView();
+};
+
 const revealPage = () => {
   if (document.body.classList.contains("is-ready")) {
     return;
@@ -20,6 +38,7 @@ const revealPage = () => {
 };
 
 window.addEventListener("load", () => {
+  migrateLegacyHash();
   window.setTimeout(revealPage, 650);
 });
 
