@@ -454,6 +454,58 @@ h1 {
   backdrop-filter: blur(10px);
 }
 
+.alfa-case-grid {
+  display: grid;
+  grid-template-columns: 1.18fr 0.82fr;
+  gap: 14px;
+}
+
+.alfa-case-media {
+  position: relative;
+  min-width: 0;
+  min-height: 300px;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: #0d0d0d;
+}
+
+.alfa-case-main {
+  grid-row: span 2;
+  min-height: 620px;
+}
+
+.alfa-case-media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.alfa-case-main img {
+  object-position: center;
+}
+
+.alfa-case-media:not(.alfa-case-main) img {
+  object-position: center 44%;
+}
+
+.alfa-case-media figcaption {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  left: 16px;
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 11px;
+  background: rgba(3, 3, 3, 0.78);
+  color: rgba(248, 248, 244, 0.86);
+  font-size: 12px;
+  font-weight: 700;
+  backdrop-filter: blur(10px);
+}
+
 .optional-video-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -574,6 +626,7 @@ h1 {
   .n9-media-grid,
   .video-case-grid,
   .double-case-grid,
+  .alfa-case-grid,
   .optional-video-grid {
     grid-template-columns: 1fr;
   }
@@ -662,6 +715,11 @@ h1 {
 
   .double-case-detail {
     min-height: 500px;
+  }
+
+  .alfa-case-main,
+  .alfa-case-media {
+    min-height: 390px;
   }
 
   .optional-video {
