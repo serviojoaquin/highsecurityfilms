@@ -1248,6 +1248,110 @@ a.resistance-card {
   margin: 30px auto 16px;
 }
 
+.extra-work {
+  max-width: 1060px;
+  margin: 0 auto 18px;
+}
+
+.extra-work summary {
+  width: fit-content;
+  min-height: 48px;
+  margin: 0 auto;
+  padding: 0 16px 0 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid rgba(216, 181, 109, 0.26);
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 14% 0%, rgba(216, 181, 109, 0.12), transparent 38%),
+    rgba(255, 255, 255, 0.035);
+  color: rgba(248, 248, 244, 0.88);
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  list-style: none;
+  text-transform: uppercase;
+  transition: transform 220ms ease, border-color 220ms ease, background 220ms ease;
+}
+
+.extra-work summary::-webkit-details-marker {
+  display: none;
+}
+
+.extra-work summary:hover {
+  transform: translateY(-2px);
+  border-color: rgba(216, 181, 109, 0.58);
+  background:
+    radial-gradient(circle at 14% 0%, rgba(216, 181, 109, 0.18), transparent 40%),
+    rgba(255, 255, 255, 0.05);
+}
+
+.extra-work summary b {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(243, 24, 34, 0.28);
+  border-radius: 12px;
+  background: rgba(243, 24, 34, 0.12);
+  color: var(--red);
+  font-size: 14px;
+  line-height: 1;
+  transition: transform 220ms ease;
+}
+
+.extra-work[open] summary b {
+  transform: rotate(180deg);
+}
+
+.extra-work-grid {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.extra-work-grid figure {
+  position: relative;
+  min-height: 178px;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: #0c0c0c;
+}
+
+.extra-work-grid img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 420ms ease;
+}
+
+.extra-work-grid figure:hover img {
+  transform: scale(1.035);
+}
+
+.extra-work-grid figcaption {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 11px;
+  background: rgba(3, 3, 3, 0.72);
+  color: rgba(248, 248, 244, 0.88);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+}
+
 .clients-video-heading h3 {
   margin: 0;
   font-family: var(--display);
@@ -1831,6 +1935,10 @@ body.is-ready .reveal {
     grid-auto-rows: auto;
   }
 
+  .extra-work-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .work-section .work-card {
     aspect-ratio: 16 / 9;
   }
@@ -2015,6 +2123,22 @@ body.is-ready .reveal {
   .work-gallery {
     grid-auto-rows: auto;
     gap: 12px;
+  }
+
+  .extra-work summary {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .extra-work-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .extra-work-grid figure {
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+    border-radius: 18px;
   }
 
   .work-section .work-card {
