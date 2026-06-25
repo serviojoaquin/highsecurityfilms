@@ -75,17 +75,6 @@ window.addEventListener("keydown", (event) => {
   }
 });
 
-const heroVideo = document.querySelector(".hero-video");
-
-heroVideo?.addEventListener("error", () => {
-  if (!heroVideo.dataset.fallbackApplied) {
-    heroVideo.dataset.fallbackApplied = "true";
-    heroVideo.innerHTML = '<source src="assets/video.mp4" type="video/mp4" />';
-    heroVideo.load();
-    heroVideo.play().catch(() => {});
-  }
-});
-
 const animatedSections = document.querySelectorAll(".section, .cta-band, .final-cta");
 
 if ("IntersectionObserver" in window) {

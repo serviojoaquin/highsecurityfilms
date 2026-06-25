@@ -319,9 +319,7 @@ a {
   align-items: center;
   overflow: hidden;
   padding: 92px 0 46px;
-  background:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.48)),
-    url("assets/media/work-suv.jpg") center / cover;
+  background: #030303;
 }
 
 .hero-video,
