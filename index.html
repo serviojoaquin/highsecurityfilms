@@ -43,13 +43,13 @@
       />
     </noscript>
     <div class="page-loader" aria-label="Cargando página">
-      <img src="assets/logo-hsf.png" alt="High Security Films" />
+      <img src="assets/logo-hsf.webp" alt="High Security Films" />
       <span></span>
     </div>
 
     <header class="site-header">
       <a class="brand" href="#inicio" aria-label="High Security Films">
-        <img class="brand-logo" src="assets/logo-hsf.png" alt="HSF High Security Films" />
+        <img class="brand-logo" src="assets/logo-hsf.webp" alt="HSF High Security Films" />
       </a>
 
       <nav class="luxury-nav" aria-label="Navegación principal">
@@ -396,8 +396,8 @@
         </div>
         <div class="video-grid clients-video-grid">
           <article class="video-feature">
-            <video autoplay muted loop playsinline aria-label="Video de detalle de aplicación">
-              <source src="assets/media/process-01.mp4" type="video/mp4" />
+            <video autoplay muted loop playsinline preload="none" poster="assets/media/process-01-poster.webp" aria-label="Video de detalle de aplicación">
+              <source data-src="assets/media/process-01.mp4" type="video/mp4" />
             </video>
             <div>
               <span>Proceso real</span>
@@ -405,8 +405,8 @@
             </div>
           </article>
           <article class="video-feature video-feature-secondary">
-            <video autoplay muted loop playsinline aria-label="Video de trabajo High Security Films">
-              <source src="assets/media/process-02.mp4" type="video/mp4" />
+            <video autoplay muted loop playsinline preload="none" poster="assets/media/process-02-poster.webp" aria-label="Video de trabajo High Security Films">
+              <source data-src="assets/media/process-02.mp4" type="video/mp4" />
             </video>
             <div>
               <span>Films 3M</span>
@@ -436,17 +436,17 @@
 
         <div class="quality-showcase">
           <article class="quality-video">
-            <video controls playsinline preload="auto">
+            <video controls playsinline preload="none" poster="assets/media/quality-01-poster.webp">
               <source src="assets/media/quality-01.mp4" type="video/mp4" />
             </video>
           </article>
           <article class="quality-video">
-            <video controls playsinline preload="auto">
+            <video controls playsinline preload="none" poster="assets/media/quality-02-poster.webp">
               <source src="assets/media/quality-02.mp4" type="video/mp4" />
             </video>
           </article>
           <article class="quality-video">
-            <video controls playsinline preload="auto">
+            <video controls playsinline preload="none" poster="assets/media/hero-hsf-poster.webp">
               <source src="assets/media/hero-hsf.mp4" type="video/mp4" />
             </video>
           </article>
@@ -531,7 +531,7 @@
         <div class="reviews-grid">
           <article class="review-card">
             <div class="review-author">
-              <img src="assets/reviews/pablo-andres-drach.png" alt="Foto de Pablo Andrés Drach" />
+              <img src="assets/reviews/pablo-andres-drach.webp" alt="Foto de Pablo Andrés Drach" loading="lazy" decoding="async" />
               <div>
                 <span>★★★★★</span>
                 <h3>Pablo Andrés Drach</h3>
@@ -541,7 +541,7 @@
           </article>
           <article class="review-card">
             <div class="review-author">
-              <img src="assets/reviews/alan-cruceno.png" alt="Foto de Alan Cruceño" />
+              <img src="assets/reviews/alan-cruceno.webp" alt="Foto de Alan Cruceño" loading="lazy" decoding="async" />
               <div>
                 <span>★★★★★</span>
                 <h3>Alan Cruceño</h3>
@@ -551,7 +551,7 @@
           </article>
           <article class="review-card">
             <div class="review-author">
-              <img src="assets/reviews/sandro-gabriel.png" alt="Foto de Sandro Gabriel" />
+              <img src="assets/reviews/sandro-gabriel.webp" alt="Foto de Sandro Gabriel" loading="lazy" decoding="async" />
               <div>
                 <span>★★★★★</span>
                 <h3>Sandro Gabriel</h3>
@@ -561,7 +561,7 @@
           </article>
           <article class="review-card">
             <div class="review-author">
-              <img src="assets/reviews/felipe-nicosia.png" alt="Foto de Felipe Nicosia" />
+              <img src="assets/reviews/felipe-nicosia.webp" alt="Foto de Felipe Nicosia" loading="lazy" decoding="async" />
               <div>
                 <span>★★★★★</span>
                 <h3>Felipe Nicosia</h3>
@@ -571,7 +571,7 @@
           </article>
           <article class="review-card">
             <div class="review-author">
-              <img src="assets/reviews/patito-m.png" alt="Foto de Patito M" />
+              <img src="assets/reviews/patito-m.webp" alt="Foto de Patito M" loading="lazy" decoding="async" />
               <div>
                 <span>★★★★★</span>
                 <h3>Patito M</h3>
@@ -581,7 +581,7 @@
           </article>
           <article class="review-card">
             <div class="review-author">
-              <img src="assets/reviews/gabriel-marucchi-foino.png" alt="Foto de Gabriel Marucchi Foino" />
+              <img src="assets/reviews/gabriel-marucchi-foino.webp" alt="Foto de Gabriel Marucchi Foino" loading="lazy" decoding="async" />
               <div>
                 <span>★★★★★</span>
                 <h3>Gabriel Marucchi Foino</h3>
@@ -818,7 +818,7 @@
       </section>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
-    <script src="script.js"></script>
+    <script async src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script defer src="script.js"></script>
   </body>
 </html>

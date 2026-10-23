@@ -75,6 +75,49 @@ window.addEventListener("keydown", (event) => {
   }
 });
 
+const ambientVideos = document.querySelectorAll(".clients-video-grid video");
+
+const playAmbientVideo = (video) => {
+  const source = video.querySelector("source[data-src]");
+  if (source) {
+    source.src = source.dataset.src;
+    source.removeAttribute("data-src");
+    video.load();
+  }
+  video.play().catch(() => {});
+};
+
+if ("IntersectionObserver" in window) {
+  const videoObserver = new IntersectionObserver((entries) => {
+    entries.forEach(({ target, isIntersecting }) => {
+      if (isIntersecting && !document.hidden) {
+        playAmbientVideo(target);
+      } else {
+        target.pause();
+      }
+    });
+  }, { threshold: 0.2 });
+
+  ambientVideos.forEach((video) => videoObserver.observe(video));
+} else {
+  ambientVideos.forEach(playAmbientVideo);
+}
+
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) {
+    document.querySelectorAll("video[autoplay]").forEach((video) => video.pause());
+    return;
+  }
+
+  document.querySelector(".hero-video")?.play().catch(() => {});
+  ambientVideos.forEach((video) => {
+    const bounds = video.getBoundingClientRect();
+    if (bounds.top < window.innerHeight && bounds.bottom > 0) {
+      playAmbientVideo(video);
+    }
+  });
+});
+
 const animatedSections = document.querySelectorAll(".section, .cta-band, .final-cta");
 
 if ("IntersectionObserver" in window) {

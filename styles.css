@@ -1151,14 +1151,14 @@ a.resistance-card {
 .impact-before .impact-media {
   background-image:
     linear-gradient(180deg, transparent 48%, rgba(0, 0, 0, 0.45)),
-    url("assets/impact/caso-impacto-01.png");
+    url("assets/impact/caso-impacto-01.webp");
   background-position: center;
 }
 
 .impact-after .impact-media {
   background-image:
     linear-gradient(180deg, transparent 48%, rgba(0, 0, 0, 0.55)),
-    url("assets/impact/caso-impacto-02.png");
+    url("assets/impact/caso-impacto-02.webp");
   background-color: #0d0d0d;
   background-position: center 44%;
   background-size: cover;
@@ -1426,13 +1426,13 @@ a.resistance-card {
 .work-visual-two {
   background-image:
     linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.2)),
-    url("assets/media/work-mercedes.jpg");
+    url("assets/media/work-mercedes.webp");
 }
 
 .work-visual-three {
   background-image:
     linear-gradient(135deg, rgba(243, 24, 34, 0.08), rgba(0, 0, 0, 0.2)),
-    url("assets/media/work-pickup.jpg");
+    url("assets/media/work-pickup.webp");
 }
 
 .process-list article {
